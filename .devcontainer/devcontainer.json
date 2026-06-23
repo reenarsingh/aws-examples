@@ -1,0 +1,22 @@
+{
+  "name": "AWS Cloud Development Container",
+  "image": "://microsoft.com",
+  
+  // Installs features like AWS CLI natively on top of the image
+  "features": {
+    "ghcr.io/devcontainers/features/aws-cli:1": {}
+  },
+
+  // Automatically installs helpful VS Code Extensions
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "amazonwebservices.aws-toolkit-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+
+  // Installs the AWS CDK CLI globally using npm once the container is ready
+  "postCreateCommand": "npm install -g aws-cdk"
+}
